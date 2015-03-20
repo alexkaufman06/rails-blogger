@@ -3,10 +3,10 @@
 <%= form_for [@post, @comment] do |f| %>
   <div class="form group">
     <%= f.label :date %>
-    <%= f.date_field :date, class: 'form-control' %>
+    <%= f.date_field :date, class: 'form-control', required: true, autofocus: true %>
     <br>
     <%= f.label :comment %>
-    <%= f.text_area :comment, size: "30x6", class: 'form-control' %>
+    <%= f.text_area :comment, size: "30x6", class: 'form-control', required: true %>
     <br>
     <%= f.submit class: 'btn btn-success' %>
   </div>
