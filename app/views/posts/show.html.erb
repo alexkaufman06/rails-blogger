@@ -14,13 +14,14 @@
   <ul>
     <% @post.comments.each do |comment| %>
       <li>
-        <%= comment.date %> |
-        <%= link_to "Edit", edit_post_comment_path(@post, comment) %> |
-        <%= link_to "Delete", post_comment_path(@post, comment),
+        <%= comment.date %>
+        <%= link_to "Edit", edit_post_comment_path(@post, comment), class: 'btn btn-primary btn-xs' %>
+        <%= link_to "Delete", post_comment_path(@post, comment), class: 'btn btn-danger btn-xs',
                                 data: {:confirm => "Delete Comment?",
                                        :method => "delete"} %>
         <br>
         <%= comment.comment %>
+        <hr>
       </li>
     <% end %>
   </ul>

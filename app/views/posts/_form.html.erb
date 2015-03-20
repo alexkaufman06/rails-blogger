@@ -1,13 +1,18 @@
 <%= render("layouts/errors", object: @post) %>
 
 <%= form_for @post do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <br>
-  <%= f.label :date %>
-  <%= f.date_field :date %>
-  <br>
-  <%= f.label :blog %>
-  <%= f.text_area :blog, size: "30x6" %>
-  <%= f.submit %>
+  <div class="form group">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: 'form-control' %>
+    <br>
+    <%= f.label :date %>
+    <%= f.date_field :date, class: 'form-control' %>
+    <br>
+    <%= f.label :blog %>
+    <%= f.text_area :blog, size: "30x6", class: 'form-control' %>
+    <br>
+    <%= f.submit class: 'btn btn-success' %>
+  </div>
 <% end %>
+<br>
+<%= link_to "Back to Posts", posts_path %>
