@@ -3,9 +3,11 @@
 <%= form_for @post do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %>
+  <br>
   <%= f.label :date %>
-  <%= f.text_field :date %>
+  <%= f.date_field :date %>
+  <br>
   <%= f.label :blog %>
-  <%= f.text_field :blog %>
+  <%= f.text_area :blog, size: "30x6" %>
   <%= f.submit %>
 <% end %>
