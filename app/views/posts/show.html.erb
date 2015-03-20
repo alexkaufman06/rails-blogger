@@ -3,7 +3,7 @@
 
 <h4>Date: <%= @post.date %></h4>
 
-<p><%= @post.blog %></p>
+<p class="well"><%= @post.blog %></p>
 
 <%= link_to "Back to Posts", posts_path %>
 
@@ -20,7 +20,9 @@
                                 data: {:confirm => "Delete Comment?",
                                        :method => "delete"} %>
         <br>
-        <%= comment.comment %>
+        <div class="well">
+          <%= comment.comment %>
+        </div>
         <hr>
       </li>
     <% end %>

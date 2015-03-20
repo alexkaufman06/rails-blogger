@@ -14,10 +14,10 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save
-      flash[:notice] = "Post Successfully Added!"
+      flash[:success] = "Post Successfully Added!"
       redirect_to posts_path
     else
-      flash[:alert] = "There was a problem creating your post, please try again."
+      flash[:danger] = "There was a problem creating your post, please try again."
       render :new
     end
   end
@@ -29,10 +29,10 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     if @post.update(post_params)
-      flash[:notice] = "Post Successfully Updated!"
+      flash[:success] = "Post Successfully Updated!"
       redirect_to posts_path
     else
-      flash[:alert] = "There was a problem updating your post, please try again."
+      flash[:danger] = "There was a problem updating your post, please try again."
       render :edit
     end
   end
@@ -40,7 +40,7 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    flash[:alert] = "Post Successfully Deleted!"
+    flash[:danger] = "Post Successfully Deleted!"
     redirect_to posts_path
   end
 

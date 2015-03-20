@@ -8,9 +8,10 @@ class CommentsController < ApplicationController
     @post = Post.find(params[:post_id])
     @comment = @post.comments.new(comment_params)
     if @comment.save
-      flash[:notice] = "Comment Successfully Added!"
+      flash[:success] = "Comment Successfully Added!"
       redirect_to post_path(@post)
     else
+      flash[:danger] = "There was a problem creating your comment, please try again"
       render :new
     end
   end
@@ -24,9 +25,10 @@ class CommentsController < ApplicationController
     @post = Post.find(params[:post_id])
     @comment = Comment.find(params[:id])
     if @comment.update(comment_params)
-      flash[:notice] = "Comment Successfully Updated!"
+      flash[:success] = "Comment Successfully Updated!"
       redirect_to post_path(@comment.post)
     else
+      flash[:danger] = "There was a problem updating your comment, please try again"
       render :edit
     end
   end
@@ -34,7 +36,7 @@ class CommentsController < ApplicationController
   def destroy
     @comment = Comment.find(params[:id])
     @comment.destroy
-    flash[:alert] = "Comment Successfully Deleted!"
+    flash[:danger] = "Comment Successfully Deleted!"
     redirect_to post_path(@comment.post)
   end
 
