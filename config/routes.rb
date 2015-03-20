@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
-  get '/' => "posts#index"
-  resources :posts
+  root to: "posts#index"
+  resources :posts do
+    resources :comments, except: [:show, :index]
+  end
 end

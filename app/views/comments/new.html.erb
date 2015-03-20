@@ -1,0 +1,5 @@
+<% content_for(:title, "New comment | " + @post.title) %>
+
+<h1>New comment for <%= @post.title %></h1>
+
+<%= render 'form' %>
