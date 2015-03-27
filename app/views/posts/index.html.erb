@@ -4,10 +4,12 @@
 <ul>
   <% @posts.each do |post| %>
     <li><%= link_to post.title, post_path(post) %>
-        <%= link_to "Edit", edit_post_path(post), class: 'btn btn-primary btn-xs' %>
-        <%= link_to "Delete", post_path(post), class: 'btn btn-danger btn-xs',
-                              data: {confirm: "Delete this post?",
-                                     method: "delete"} %>
+        <% if current_user %>
+          <%= link_to "Edit", edit_post_path(post), class: 'btn btn-primary btn-xs' %>
+          <%= link_to "Delete", post_path(post), class: 'btn btn-danger btn-xs',
+                                data: {confirm: "Delete this post?",
+                                       method: "delete"} %>
+        <% end %>
     </li>
     <hr>
   <% end %>

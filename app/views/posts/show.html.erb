@@ -15,10 +15,12 @@
     <% @post.comments.each do |comment| %>
       <li>
         <%= comment.date %>
-        <%= link_to "Edit", edit_post_comment_path(@post, comment), class: 'btn btn-primary btn-xs' %>
-        <%= link_to "Delete", post_comment_path(@post, comment), class: 'btn btn-danger btn-xs',
-                                data: {:confirm => "Delete Comment?",
-                                       :method => "delete"} %>
+        <% if current_user %>
+          <%= link_to "Edit", edit_post_comment_path(@post, comment), class: 'btn btn-primary btn-xs' %>
+          <%= link_to "Delete", post_comment_path(@post, comment), class: 'btn btn-danger btn-xs',
+                                  data: {:confirm => "Delete Comment?",
+                                         :method => "delete"} %>
+        <% end %>
         <br>
         <div class="well">
           <%= comment.comment %>
