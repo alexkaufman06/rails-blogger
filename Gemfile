@@ -26,10 +26,10 @@ group :test, :development do
 end
 
 group :test do
+  gem 'chromedriver-helper'
+  gem 'factory_girl_rails'
   gem 'shoulda-matchers'
   gem 'launchy'
-  gem 'factory_girl_rails'
-  gem 'chromedriver-helper'
 end
 
 group :production do
