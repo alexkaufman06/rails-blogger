@@ -37,7 +37,7 @@ $ rails server
 ```
 Type the url localhost:3000 into your web browser.
 ### Bug Reports
-None Known
+When running rspec, the test database is not clearing out so rake db:test:prepare has to be run each time.
 ### Author
 Alex Kaufman
 #### MIT License
