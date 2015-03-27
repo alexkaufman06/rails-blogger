@@ -9,6 +9,9 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'pry'
 gem 'bootstrap-sass', '~> 3.3.4'
+gem 'devise'
+gem 'selenium-webdriver'
+gem 'faker'
 
 group :development do
   gem 'byebug'
@@ -19,11 +22,14 @@ end
 
 group :test, :development do
   gem 'rspec-rails'
+  gem 'capybara'
 end
 
 group :test do
   gem 'shoulda-matchers'
-  gem 'capybara'
+  gem 'launchy'
+  gem 'factory_girl_rails'
+  gem 'chromedriver-helper'
 end
 
 group :production do
