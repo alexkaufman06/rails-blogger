@@ -1,5 +1,6 @@
 # Rails Blogger
-This is an blogging app I built in 6 hours at Epicodus using Ruby on Rails. [View Site Here](https://rails--blogger.herokuapp.com/)
+This is an blogging app I built at Epicodus using Ruby on Rails and Bootstrap.  I used the gem devise
+to handle user authentication.  [View Site Here](https://rails--blogger.herokuapp.com/)
 ## Setup Instructions:
 ### Gems Used:
 ```
