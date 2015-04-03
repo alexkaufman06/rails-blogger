@@ -1,8 +1,9 @@
 class PostsController < ApplicationController
   before_filter :authenticate_user!, except: [:index, :show]
+  respond_to :html, :js
 
   def index
-    @posts = Post.all
+    @posts = Post.all.reverse
   end
 
   def show
@@ -17,7 +18,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     if @post.save
       flash[:success] = "Post Successfully Added!"
-      redirect_to posts_path
+      # redirect_to posts_path
     else
       flash[:danger] = "There was a problem creating your post, please try again."
       render :new

@@ -12,6 +12,7 @@ gem 'bootstrap-sass', '~> 3.3.4'
 gem 'devise'
 gem 'selenium-webdriver'
 gem 'faker'
+gem 'responders', '~> 2.0'
 
 group :development do
   gem 'byebug'

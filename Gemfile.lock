@@ -238,6 +238,7 @@ DEPENDENCIES
   quiet_assets
   rails
   rails_12factor
+  responders (~> 2.0)
   rspec-rails
   sass-rails
   selenium-webdriver
