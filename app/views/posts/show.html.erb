@@ -9,28 +9,30 @@
 
 <hr>
 
-<% if @post.comments.any? %>
-  <h4>Here are the comments for this post:</h4>
-  <ul>
-    <% @post.comments.each do |comment| %>
-      <li>
-        <%= comment.date %>
-        <% if current_user %>
-          <%= link_to "Edit", edit_post_comment_path(@post, comment), class: 'btn btn-primary btn-xs' %>
-          <%= link_to "Delete", post_comment_path(@post, comment), class: 'btn btn-danger btn-xs',
-                                  data: {:confirm => "Delete Comment?",
-                                         :method => "delete"} %>
-        <% end %>
-        <br>
-        <div class="well">
-          <%= comment.comment %>
-        </div>
-        <hr>
-      </li>
-    <% end %>
-  </ul>
-<% else %>
-  <p>There are no comments yet!</p>
-<% end %>
+<div id="comments">
+  <% if @post.comments.any? %>
+    <h4>Here are the comments for this post:</h4>
+    <ul>
+      <% @post.comments.each do |comment| %>
+        <li>
+          <%= comment.date %>
+          <% if current_user %>
+            <%= link_to "Edit", edit_post_comment_path(@post, comment), class: 'btn btn-primary btn-xs' %>
+            <%= link_to "Delete", post_comment_path(@post, comment), class: 'btn btn-danger btn-xs',
+                                    data: {:confirm => "Delete Comment?",
+                                           :method => "delete"} %>
+          <% end %>
+          <br>
+          <div class="well">
+            <%= comment.comment %>
+          </div>
+          <hr>
+        </li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p>There are no comments yet!</p>
+  <% end %>
+</div>
 
-<p><%= link_to "Add a Comment", new_post_comment_path(@post) %></p>
+<p><%= link_to "Add a Comment", new_post_comment_path(@post), id: "new_comment_link", remote: true %></p>

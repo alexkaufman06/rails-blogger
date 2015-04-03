@@ -1,6 +1,6 @@
 <%= render('layouts/errors', object: @comment) %>
 
-<%= form_for [@post, @comment] do |f| %>
+<%= form_for [@post, @comment], remote: true do |f| %>
   <div class="form group">
     <%= f.label :date %>
     <%= f.date_field :date, class: 'form-control', required: true, autofocus: true %>
@@ -12,4 +12,4 @@
   </div>
 <% end %>
 <br>
-<%= link_to "Back to " + @post.title, post_path(@post) %>
+<%= link_to "Hide Form", post_path(@post), class: 'hide_form' %>
