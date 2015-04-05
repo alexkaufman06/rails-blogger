@@ -25,7 +25,7 @@ describe "the add a post process", js: true do
     click_button "Login"
     click_on "Create New Post"
     click_on "Create Post"
-    save_screenshot('screen.png')
+    # save_screenshot('screen.png')
     expect(page).to have_content "Title Date Blog"
   end
 end
