@@ -2,7 +2,6 @@ class Comment < ActiveRecord::Base
   before_create :send_sms
 
   belongs_to :post
-
   validates :date, presence: true
   validates :comment, presence: true
 
@@ -14,7 +13,7 @@ private
       :url => "https://api.twilio.com/2010-04-01/Accounts/#{ENV['TWILIO_ACCOUNT_SID']}/Messages.json",
       :user => ENV['TWILIO_ACCOUNT_SID'],
       :password => ENV['TWILIO_AUTH_TOKEN'],
-      :payload => { :Body => "you got a comment",
+      :payload => { :Body => "Someone just commented on your blog!",
         :From => '7029601843',
         :To => ENV['PHONE'] }
         ).execute

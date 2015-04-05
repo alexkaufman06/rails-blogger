@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe "the add a post process" do
+describe "the add a post process", js: true do
   it "adds a new post" do
     user = FactoryGirl.create(:user)
     visit root_path
@@ -13,7 +13,7 @@ describe "the add a post process" do
     fill_in "Date", with: "12/12/2015"
     fill_in "Blog", with: "Being a programmer is both challenging and fun!"
     click_on "Create Post"
-    expect(page).to have_content "Post Successfully Added!"
+    expect(page).to have_content "Life of a Programmer"
   end
 
   it "errors if nothing is entered by the user" do
@@ -25,6 +25,7 @@ describe "the add a post process" do
     click_button "Login"
     click_on "Create New Post"
     click_on "Create Post"
-    expect(page).to have_content "There was a problem creating your post"
+    save_screenshot('screen.png')
+    expect(page).to have_content "Title Date Blog"
   end
 end

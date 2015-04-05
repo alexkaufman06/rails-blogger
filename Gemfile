@@ -12,9 +12,7 @@ gem 'bootstrap-sass', '~> 3.3.4'
 gem 'bootswatch-rails'
 gem 'bootstrap-form'
 gem 'devise'
-gem 'selenium-webdriver'
 gem 'faker'
-gem 'responders', '~> 2.0'
 gem 'rest-client'
 gem 'dotenv-rails'
 
@@ -27,16 +25,15 @@ end
 
 group :test, :development do
   gem 'rspec-rails'
-  gem 'capybara'
 end
 
 group :test do
-  gem 'chromedriver-helper'
+  gem 'responders', '~> 2.0'
+  gem 'capybara'
   gem 'factory_girl_rails'
   gem 'shoulda-matchers'
   gem 'launchy'
   gem 'vcr'
-  gem 'webmock'
   gem 'poltergeist'
   gem 'database_cleaner'
 end
