@@ -15,6 +15,8 @@ gem 'devise'
 gem 'selenium-webdriver'
 gem 'faker'
 gem 'responders', '~> 2.0'
+gem 'rest-client'
+gem 'dotenv-rails'
 
 group :development do
   gem 'byebug'
@@ -33,6 +35,10 @@ group :test do
   gem 'factory_girl_rails'
   gem 'shoulda-matchers'
   gem 'launchy'
+  gem 'vcr'
+  gem 'webmock'
+  gem 'poltergeist'
+  gem 'database_cleaner'
 end
 
 group :production do
