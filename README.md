@@ -1,5 +1,5 @@
 # Rails Blogger
-This is an blogging app I built at Epicodus using Ruby on Rails and Bootstrap.  I used the gem devise
+This is an blogging app I built at Epicodus using Ruby on Rails, Bootstrap, and a Twilio API.  I used the gem devise
 to handle user authentication.  [View Site Here](https://rails--blogger.herokuapp.com/)
 ## Setup Instructions:
 ### Gems Used:
